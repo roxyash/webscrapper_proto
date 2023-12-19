@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package scrapper;
+
+option go_package = "roxyash.scrapper.v1;scrapperv1";
+
+service FileService {
+  rpc GetFile (FileRequest) returns (FileResponse);
+}
+
+message FileRequest {
+  string name = 1;
+}
+
+message FileResponse {
+  bytes content = 1;
+}
