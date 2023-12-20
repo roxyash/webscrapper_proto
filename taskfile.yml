@@ -9,6 +9,4 @@ tasks:
     cmds:
       - protoc -I proto proto/scrapper/*.proto --go_out=./gen/go/ --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
       - python3 -m grpc_tools.protoc -I proto --python_out=./gen/python/ --grpc_python_out=./gen/python/ proto/scrapper/*.proto
-      - mv ./gen/python/scrapper/scrapper_pb2.py ./gen/python/scrapper/scrapper_pb.py
-      - mv ./gen/python/scrapper/scrapper_pb2_grpc.py ./gen/python/scrapper/scrapper_pb_grpc.py
 
