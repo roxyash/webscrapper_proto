@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from scrapper import scrapper_pb2 as scrapper_dot_scrapper__pb2
+from gen.python.scrapper import scrapper_pb as scrapper_dot_scrapper__pb2
 
 
 class FileServiceStub(object):
