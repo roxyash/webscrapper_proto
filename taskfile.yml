@@ -15,3 +15,9 @@ tasks:
     desc: "Command code from proto"
     cmds:
       - protoc -I proto proto/auth/*.proto --go_out=./gen/go/ --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
+  update:
+    desc: "Update repo"
+    cmds:
+      - git add .
+      - git commit -m "feat:update"
+      - git push origin master

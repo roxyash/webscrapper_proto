@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "github.com/roxyash/webscrapper_proto/roxyash/auth/v1;authv1";
+option go_package = "github.com/roxyash/webscrapper_proto/gen/go/auth;auth";
 
 service AuthService {
   rpc Login (LoginRequest) returns (LoginResponse);
