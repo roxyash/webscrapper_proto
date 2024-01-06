@@ -6,7 +6,7 @@ option go_package = "github.com/roxyash/webscrapper_proto/gen/go/auth;auth";
 
 service AuthService {
   rpc Login (LoginRequest) returns (LoginResponse);
-  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc UserRegister (UserRegisterRequest) returns (UserRegisterResponse);
 }
 
 message LoginRequest {
@@ -23,11 +23,11 @@ message JWT {
   string refreshToken = 2;
 }
 
-message RegisterRequest {
+message UserRegisterRequest {
   string username = 1;
   string password = 2;
 }
 
-message RegisterResponse {
+message UserRegisterResponse {
   JWT jwt = 1;
 }
