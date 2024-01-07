@@ -30,8 +30,8 @@ message UserRegisterRequest {
   string email = 3;
   string firstName = 4;
   string lastName = 5;
-  string isAdmin = 6;
-  string isArchive = 7;
+  bool isAdmin = 6;
+  bool isArchive = 7;
 }
 
 message UserRegisterResponse {
