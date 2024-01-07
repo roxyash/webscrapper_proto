@@ -42,5 +42,6 @@ tasks:
   release:
     desc: "Update version"
     cmds:
+      - task: generate-go
       - task: create-and-push-commit
       - task: create-and-push-tag
