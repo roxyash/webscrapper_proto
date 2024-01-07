@@ -27,14 +27,17 @@ tasks:
     desc: "Update repo with Tag"
     cmds:
       - |
-        latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+        latestTag=$(git tag | sort -V | tail -n 1)
+        latestTag=${latestTag#v}
         major=$(echo $latestTag | cut -d. -f1)
         minor=$(echo $latestTag | cut -d. -f2)
         patch=$(echo $latestTag | cut -d. -f3)
         patch=$((patch + 1))
-        newTag="$major.$minor.$patch"
-        git tag -a $newTag -m "feat:tag"
-        git push origin $newTag
+        newTag="v$major.$minor.$patch"
+        if [ "$newTag" != "v$latestTag" ]; then
+          git tag -a $newTag -m "feat:tag"
+          git push origin $newTag
+        fi
 
   update-version:
     desc: "Update version"
