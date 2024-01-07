@@ -39,7 +39,7 @@ tasks:
           git push origin $newTag
         fi
 
-  update-version:
+  release:
     desc: "Update version"
     cmds:
       - task: create-and-push-commit
