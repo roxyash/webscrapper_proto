@@ -45,3 +45,11 @@ message RefreshTokenRequest {
 message RefreshTokenResponse {
   JWT jwt = 1;
 }
+
+message VerifyTokenRequest {
+  string refreshToken = 1;
+}
+
+message VerifyTokenResponse {
+  JWT jwt = 1;
+}
