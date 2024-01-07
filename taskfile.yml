@@ -24,13 +24,15 @@ tasks:
       - git push origin master
 
   create-and-push-tag:
-    desc: "Update repo with Tag "
+    desc: "Update repo with Tag"
     cmds:
       - |
         latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-        IFS='.' read -ra parts <<< "$latestTag"
-        parts[2]=$((parts[2] + 1))
-        newTag="${parts[0]}.${parts[1]}.${parts[2]}"
+        major=$(echo $latestTag | cut -d. -f1)
+        minor=$(echo $latestTag | cut -d. -f2)
+        patch=$(echo $latestTag | cut -d. -f3)
+        patch=$((patch + 1))
+        newTag="$major.$minor.$patch"
         git tag -a $newTag -m "feat:tag"
         git push origin $newTag
 
