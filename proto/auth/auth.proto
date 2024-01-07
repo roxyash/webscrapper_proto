@@ -47,7 +47,7 @@ message RefreshTokenResponse {
 }
 
 message VerifyTokenRequest {
-  string refreshToken = 1;
+  string accessToken = 1;
 }
 
 message VerifyTokenResponse {
