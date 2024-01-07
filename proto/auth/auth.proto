@@ -8,6 +8,7 @@ service AuthService {
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc UserRegister (UserRegisterRequest) returns (UserRegisterResponse);
   rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse);
+  rpc VerifyAccessToken (VerifyTokenRequest) returns (VerifyTokenResponse);
 }
 
 message LoginRequest {
